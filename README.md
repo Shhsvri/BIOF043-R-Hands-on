@@ -19,11 +19,3 @@ R Markdown integrates a number of R packages and external tools. This means that
 - R Markdown Reference Guide: Help > Cheatsheets > R Markdown Reference Guide.
 
 > You could also obtain these at: https://rstudio.com/resources/cheatsheets/.
-
-### 1. Getting Started
-
-You need the rmarkdown package, but you don’t need to explicitly install it or load it, as RStudio automatically does both when needed.
-
-#### 1.1 R Markdown basics
-
-

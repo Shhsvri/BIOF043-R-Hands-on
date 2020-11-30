@@ -1,10 +1,10 @@
-# Capstone Projects
+# Capstone Project 1
 
 Welcome to the last part of the workshop where we put all the skills we have learned in R to do data science.
 
 ## agenda
 
-We have two projects:\
+We have two projects:
 
 1. From Medicare-Part-D data, we will generate visualizations showing the states that prescribe **Buprenorphine** the most, per capita.
 
