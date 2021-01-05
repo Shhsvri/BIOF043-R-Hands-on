@@ -1,6 +1,7 @@
 # BIOF043-R-Hands-on
+## Day4: RMarkdown and Capstone Projects
 
-## Agenda
+### Agenda
 Today, we are going to learn about RMarkdown and analyze clinical and genomic 
 data using what we have learned in the past three days and generate beautiful 
 markdown reports that you could share with collaborators or use for publications.
