@@ -1,14 +1,12 @@
 # Capstone Project 1
 
-Welcome to the last part of the workshop where we put all the skills we have learned in R to do data science.
+Welcome to the last part of the workshop where we put all the skills we have learned in R to analyze data.
 
 ### Project 1
 
- Buprenorphine is a prescription drug used to treat opioid dependence. It is used on its own or formulated in combination with naloxone.
+Buprenorphine is a prescription drug used to treat opioid dependence. It is used on its own or formulated in combination with naloxone.
 
- We seek to understand patterns of buprenorphine usage nationally. Using the 2017 Medicare Part D Prescriber file, aggregate buprenorphine claims by the state of the provider and report the top 5 states by volume of buprenorphine usage.
-
-**Provide a list of the top 5 states by volume of buprenorphine usage. You will need to:** 
+We seek to understand patterns of buprenorphine usage nationally. Using the 2017 Medicare Part D Prescriber file, aggregate buprenorphine claims by the state of the provider and report the top 5 states by volume of buprenorphine usage.
 
 - read in the `medicare_subset_claims.tsv` file in R
 - Identify the columns of this data frame using `glimpse()`

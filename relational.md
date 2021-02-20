@@ -32,7 +32,7 @@ View(df)
 View(dj)
 ```
 
-Now, we merge the two tables using the common `x` column.
+Now, we merge the two tables using the common `y` column.
 
 ```{r}
 left_join(df,dj)

@@ -45,3 +45,37 @@ What happens when you try the following?
 ```{r}
 read_tsv("./datasets/RNAseq_raw_counts.csv")
 ```
+
+- Let's use `glimpse()` to get an overview of what is in this table
+
+```{r}
+glimpse(raw_counts)
+```
+
+- Next, we would like to select only three of the columns in our raw\_counts dataframe: EntrezID, Treated\_1, Control\_1 and store the result in a new variable called: raw\_counts\_subset1
+
+```{r}
+raw_counts_subset1 <- raw_counts %>%
+  select(EntrezID, Treated_1, Control_1)
+
+glimpse(raw_counts_subset1)
+
+ggplot(raw_counts_subset1) +
+   geom_histogram(aes(x = Treated_1), bins = 100) + 
+   xlim(-5, 500)  +
+   xlab("Raw expression counts") +
+   ylab("Number of genes")
+```
+
+- Lastly, let's
+
+```{r}
+raw_counts_subset1_filtered <- raw_counts_subset1 %>%
+  filter(Treated_1 > 5)
+
+ggplot(raw_counts_subset1_filtered) +
+   geom_histogram(aes(x = Treated_1), stat = "bin", bins = 200) + 
+   xlim(-5, 500)  +
+   xlab("Raw expression counts") +
+   ylab("Number of genes")
+```

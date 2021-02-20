@@ -16,6 +16,6 @@ expressed genes comparing our study and control samples.
 
 
 - [Importing Data](./import.md)
-- [Relationa Data](./relational.md)
+- [Relational Data](./relational.md)
 - [RMarkdown](./RMarkdown.md)
 - [Final Project](./Project.md)
