@@ -6,13 +6,13 @@ Welcome to the last part of the workshop where we put all the skills we have lea
 
  Buprenorphine is a prescription drug used to treat opioid dependence. It is used on its own or formulated in combination with naloxone.
 
- We seek to understand patterns of buprenorphine usage nationally. Using the 2017 Medicare Part D Prescriber file (below), aggregate buprenorphine claims by the state of the provider and report the top 5 states by volume of buprenorphine usage.
+ We seek to understand patterns of buprenorphine usage nationally. Using the 2017 Medicare Part D Prescriber file, aggregate buprenorphine claims by the state of the provider and report the top 5 states by volume of buprenorphine usage.
 
 **Provide a list of the top 5 states by volume of buprenorphine usage. You will need to:** 
 
-- Download the data and methodology document here: https://data.cms.gov/Medicare-Part-D/Medicare-Provider-Utilization-and-Payment-Data-201/77gb-8z53
-
-- Identify rows that describe claims for buprenorphine, including when formulated in combination with naloxone or other drugs.
+- read in the `medicare_subset_claims.tsv` file in R
+- Identify the columns of this data frame using `glimpse()`
+- Use `count()` on the column that identifies the state
 
 - Identify a column that can be aggregated to describe per state usage of buprenorphine. Note that we seek to understand the total volume of buprenorphine by state, but claims vary in how many days' supply was prescribed.
 

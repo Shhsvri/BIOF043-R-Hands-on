@@ -32,7 +32,7 @@ apply your knowledge to all the other functions in readr.
 The first argument to `read_csv()` is the most important: it's the path to the file to read.
 
 ```{r, message = TRUE}
-heights <- read_csv("data/heights.csv")
+raw_counts <- read_csv("./datasets/RNAseq_raw_counts.csv")
 ```
 
 `read_csv()` uses the first line of the data for the column names, which is a very common
@@ -43,5 +43,5 @@ We also have a tsv file in our Day4 data folder.
 What happens when you try the following?
 
 ```{r}
-read_csv("data/heights.tsv")
+read_tsv("./datasets/RNAseq_raw_counts.csv")
 ```
