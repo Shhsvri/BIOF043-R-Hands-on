@@ -2,15 +2,6 @@
 
 Welcome to the last part of the workshop where we put all the skills we have learned in R to do data science.
 
-## agenda
-
-We have two projects:
-
-1. From Medicare-Part-D data, we will generate visualizations showing the states that prescribe **Buprenorphine** the most, per capita.
-
-2. From publicly available RNAseq data, we will find a list of differentially expressed genes comparing our study and control samples.
-
-
 ### Project 1
 
  Buprenorphine is a prescription drug used to treat opioid dependence. It is used on its own or formulated in combination with naloxone.
