@@ -20,6 +20,7 @@ Before then, we are going to go through a few concepts:
 
 Extra resources:
 
+- [Installing R and Rstudio](https://rstudio-education.github.io/hopr/starting.html)
 - [Differential Gene Expression](https://github.com/hbctraining/DGE_workshop)
 - [Linux Command Line](https://www.youtube.com/watch?v=FTTr2bjI2UM&list=PLS1QulWo1RIb9WVQGJ_vh-RQusbZgO_As&index=3)
 - [BIOF045 - NGS Data Analysis](https://faes.org/events/biof045.Mar2021)
