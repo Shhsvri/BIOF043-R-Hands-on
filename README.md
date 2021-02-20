@@ -15,8 +15,8 @@ Before then, we are going to go through a few concepts:
 - [Importing Data](lectures/import.md)
 - [Relational Data](lectures/relational.md)
 - [RMarkdown](lectures/RMarkdown.md)
-- [Final Project](../Final_Project/Project.md)
-	- [Solutions](../Final_Project/Solutions.md)
+- [Final Project](Final_Project/Project.md)
+	- [Solutions](Final_Project/Solutions.md)
 
 Extra resources:
 
