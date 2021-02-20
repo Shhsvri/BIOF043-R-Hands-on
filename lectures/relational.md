@@ -38,4 +38,4 @@ Now, we merge the two tables using the common `y` column.
 left_join(df,dj)
 ```
 
-<img src="img/left_join.png" width="600">
+<img src="../img/left_join.png" width="600">
