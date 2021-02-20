@@ -16,7 +16,7 @@ Before then, we are going to go through a few concepts:
 - [Relational Data](lectures/relational.md)
 - [RMarkdown](lectures/RMarkdown.md)
 - [Final Project](Final_Project/Project.md)
-	- [Solutions](Final_Project/Solutions.md)
+	- [Solutions](Final_Project/Solutions.Rmd)
 
 Extra resources:
 
