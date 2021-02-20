@@ -46,3 +46,21 @@ ggplot() +
            aes(x = reorder(provider_state,-n), y = n),
            stat = "identity")
 
+
+# Load the ~/Day4/datasets/medicare_providers.csv file in R
+
+providers <- read_csv("~/Day4/datasets/medicare_providers.csv")
+
+
+# Use left_join() to merge the providers by name specialty with the claims dataframe
+
+joined_claims_df <- left_join(medicare_claims, providers, by = "provider_ID")
+
+
+# Which specialty prescribe buprenorphine the most?
+
+joined_claims_df %>% count(specialty_description) %>% arrange(desc(n))
+
+
+# 
+

@@ -16,3 +16,11 @@ Before then, we are going to go through a few concepts:
 - [Relational Data](./relational.md)
 - [RMarkdown](./RMarkdown.md)
 - [Final Project](./Project.md)
+	- [Solutions](./Solutions.md)
+
+Extra resources:
+
+[Differential Gene Expression](https://github.com/hbctraining/DGE_workshop)
+[Linux Command Line](https://www.youtube.com/watch?v=FTTr2bjI2UM&list=PLS1QulWo1RIb9WVQGJ_vh-RQusbZgO_As&index=3)
+[BIOF045 - NGS Data Analysis](https://faes.org/events/biof045.Mar2021)
+[BIOF043 - Single Cell RNA-seq Data Analysis](https://faes.org/events/BIOF048.apr2021)

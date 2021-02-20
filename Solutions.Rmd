@@ -1,0 +1,131 @@
+---
+title: "Final_Project"
+author: "Shahin Shahsavari"
+date: "2/20/2021"
+output: html_document
+---
+
+# 2017 Medicare PartD Claims
+
+```{r}
+library(tidyverse)
+```
+
+* Load the `~/Day4/datasets/medicare_subset_claims.tsv` file in R
+
+```{r}
+medicare_claims <- read_tsv("~/Day4/datasets/medicare_subset_claims.tsv")
+```
+
+* Identify the columns of this data frame using glimpse()
+
+```{r}
+glimpse(medicare_claims)
+```
+
+* Use `count()` on the column that identifies the state
+  * the count() function counts the number of appearances of each element in a column
+
+```{r}
+medicare_claims %>%
+  count(provider_state)
+```
+
+* Filter the dataframe and find all the BUPRENORPHINE claims (hint: This is in the drug\_name column).
+
+```{r}
+medicare_claims %>%
+  filter(drug_name == "BUPRENORPHINE")
+```
+
+  
+* Which State has the highest number of BUPRENORPHINE claims?
+  * you can use arrange() to sort your column
+
+```{r}
+medicare_claims %>%
+  filter(drug_name == "BUPRENORPHINE") %>%
+  count(provider_state) %>%
+  arrange(desc(n))
+```
+
+
+* We just found out that sometimes the providers use the terms "BUPRENORPHINE HCL" or "BUPRENORPHINE-NALOXONE". Revise your filter to include those as well.
+
+```{r}
+buprenorphine_sorted_by_state <- medicare_claims %>%
+  filter(drug_name == "BUPRENORPHINE" | drug_name == "BUPRENORPHINE HCL" | drug_name == "") %>%
+  count(provider_state) %>%
+  arrange(desc(n))
+```
+
+* Use geom\_bar to find the aggregate count of buprenorphine claims with the state names as your x axis.
+
+```{r}
+ggplot() + 
+  geom_bar(data = buprenorphine_sorted_by_state,
+           aes(x = reorder(provider_state,-n), y = n),
+           stat = "identity")
+```
+
+Next, we would like to find out which providers (by specialty) prescribe buprenorphine the most.
+A second relational table is given: medicare\_providers.csv
+
+* Load the ~/Day4/datasets/medicare\_providers.csv file in R
+
+```{r}
+providers <- read_csv("~/Day4/datasets/medicare_providers.csv")
+```
+
+* Use left\_join() to merge the providers by name specialty with the claims dataframe
+```{r}
+joined_claims_df <- left_join(medicare_claims, providers, by="provider_ID")
+```
+
+* Which specialty prescribe buprenorphine the most.
+
+```{r}
+joined_claims_df %>%
+  count(specialty_description) %>%
+  arrange(desc(n))
+```
+
+Lastly, we will get the cost of buprenorphine per claim.
+
+
+* Using mutate(), add a new column dividing the values of total\_drug\_cost by total\_claim\_count. Call this column cost\_per\_claim
+
+```{r}
+joined_claims_df %>%
+  mutate(cos_per_claim = total_drug_cost/total_claim_count)
+```
+
+* Using group\_by() and summarize(), find the mean the cost\_per\_claim column per each state.
+
+```{r}
+joined_claims_df %>%
+  mutate(cost_per_claim = total_drug_cost/total_claim_count) %>%
+  group_by(provider_state) %>%
+  summarize(mean(cost_per_claim))
+```
+* Sort this output using arrange()
+
+```{r}
+joined_claims_df %>%
+  mutate(cost_per_claim = total_drug_cost/total_claim_count) %>%
+  group_by(provider_state) %>%
+  summarize(mean_per_state = mean(cost_per_claim)) %>%
+  arrange(mean_per_state)
+```
+
+* Lastly, use the output you just generated to print find out which state has the highest
+  average cost\_per\_claim for buprenorphine
+
+```{r}
+joined_claims_df %>%
+  mutate(cost_per_claim = total_drug_cost/total_claim_count) %>%
+  group_by(provider_state) %>%
+  summarize(mean_per_state = mean(cost_per_claim)) %>%
+  arrange(mean_per_state) %>%
+  tail(1)
+```
