@@ -6,14 +6,11 @@ Today, we are going to learn about RMarkdown and analyze clinical and genomic
 data using what we have learned in the past three days and generate beautiful 
 markdown reports that you could share with collaborators or use for publications.
 
-Then, we will have two projects:
+Then, we will have a final project:
 
-1. From Medicare-Part-D data, we will generate visualizations and reports
-showing the states that prescribe **Buprenorphine** the most, per capita.
+From Medicare-Part-D data, we will generate visualizations and reports
 
-2. From publicly available RNAseq data, we will find a list of differentially
-expressed genes comparing our study and control samples.
-
+Before then, we are going to go through a few concepts:
 
 - [Importing Data](./import.md)
 - [Relational Data](./relational.md)
