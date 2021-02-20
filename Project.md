@@ -8,18 +8,28 @@ Buprenorphine is a prescription drug used to treat opioid dependence. It is used
 
 We seek to understand patterns of buprenorphine usage nationally. Using the 2017 Medicare Part D Prescriber file, aggregate buprenorphine claims by the state of the provider and report the top 5 states by volume of buprenorphine usage.
 
-- read in the `medicare_subset_claims.tsv` file in R
-- Identify the columns of this data frame using `glimpse()`
-- Use `count()` on the column that identifies the state
+* Load the `~/Day4/datasets/medicare_subset_claims.tsv` file in R
+* Identify the columns of this data frame using `glimpse()`
+* Use `count()` on the column that identifies the state
+	* the `count()` function counts the number of appearances of each element in a column
+* Filter the dataframe and find all the `BUPRENORPHINE` claims (hint: This is in the drug\_name column).
+* Which State has the highest number of `BUPRENORPHINE` claims?
+	* you can use `arrange()` to sort your column
+* We just found out that sometimes the providers use the terms "BUPRENORPHINE HCL" or "BUPRENORPHINE-NALOXONE". Revise your filter to include those as well.
+* Use `geom_histogram` to find the aggregate count of buprenorphine claims with the state names as your x axis.
 
-- Identify a column that can be aggregated to describe per state usage of buprenorphine. Note that we seek to understand the total volume of buprenorphine by state, but claims vary in how many days' supply was prescribed.
+Next, we would like to find out which providers (by specialty) prescribe buprenorphine the most.
+A second relational table is given: `medicare_providers.csv`
 
-- Use the methodology document to correctly complete these tasks (no other data or research is required to complete this assessment).
+* Load the `~/Day4/datasets/medicare_providers.csv` file in R
+* Use `left\_join()` to merge the providers by name specialty with the claims dataframe
+* Which specialty prescribe buprenorphine the most.
 
-**DATA VISUALIZATION**
+Lastly, we will get the cost of buprenorphine per claim.
 
- Use the data set provided in the previous section to produce a graphic visualization for a general audience that illustrates buprenorphine usage for all 50 states, accentuating the top five states by usage.
+* Using `mutate()`, add a new column dividing the values of `total_drug_cost` by `total_claim_count`. Call this column `cost_per_claim`
+* Using `group\_by()` and `summarize()`, find the mean the `cost_per_claim` column per each state.
+* Sort this using `arrange()`
+* Lastly, find out which state has the highest average `cost_per_claim` for buprenorphine
 
-**Generating RMarkdown Report**
-
-Generate an RMarkdown report in your RStudio session and copy your code into code blocks. After each block, run your code to ensure it works.
+## Solutions will be posted at 3PM today.
