@@ -18,12 +18,8 @@ Before we start, we need to cover the following concepts:
 
 
 # [Final Project](Final_Project/Project.md)
-## [Solutions](Final_Project/Solutions.Rmd)
 
 Extra resources:
 
 - [Installing R and Rstudio](https://rstudio-education.github.io/hopr/starting.html)
 - [Differential Gene Expression](https://github.com/hbctraining/DGE_workshop)
-- [Linux Command Line](https://www.youtube.com/watch?v=FTTr2bjI2UM&list=PLS1QulWo1RIb9WVQGJ_vh-RQusbZgO_As&index=3)
-- [BIOF045 - NGS Data Analysis](https://faes.org/events/biof045.Mar2021)
-- [BIOF048 - Single Cell RNA-seq Data Analysis](https://faes.org/events/BIOF048.apr2021)
