@@ -18,7 +18,7 @@ Before we start, we need to cover the following concepts:
 
 
 # [Final Project](Final_Project/Project.md)
-
+## [Solutions](Final_Project/Solutions.R)
 Extra resources:
 
 - [Installing R and Rstudio](https://rstudio-education.github.io/hopr/starting.html)
