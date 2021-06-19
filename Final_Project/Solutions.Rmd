@@ -1,7 +1,7 @@
 ---
 title: "Final_Project"
 author: "Shahin Shahsavari"
-date: "2/20/2021"
+date: "6/19/2021"
 output: html_document
 ---
 
@@ -31,7 +31,7 @@ medicare_claims %>%
   count(provider_state)
 ```
 
-* Filter the dataframe and find all the BUPRENORPHINE claims (hint: This is in the drug\_name column).
+* Filter the dataframe and find all the BUPRENORPHINE claims (hint: This is in the drug_name column).
 
 ```{r}
 medicare_claims %>%
@@ -59,7 +59,7 @@ buprenorphine_sorted_by_state <- medicare_claims %>%
   arrange(desc(n))
 ```
 
-* Use geom\_bar to find the aggregate count of buprenorphine claims with the state names as your x axis.
+* Use geom_bar to find the aggregate count of buprenorphine claims with the state names as your x axis.
 
 ```{r}
 ggplot() + 
@@ -69,15 +69,15 @@ ggplot() +
 ```
 
 Next, we would like to find out which providers (by specialty) prescribe buprenorphine the most.
-A second relational table is given: medicare\_providers.csv
+A second relational table is given: medicare_providers.csv
 
-* Load the ~/Day4/datasets/medicare\_providers.csv file in R
+* Load the ~/Day4/datasets/medicare_providers.csv file in R
 
 ```{r}
 providers <- read_csv("~/Day4/datasets/medicare_providers.csv")
 ```
 
-* Use left\_join() to merge the providers by name specialty with the claims dataframe
+* Use left_join() to merge the providers by name specialty with the claims dataframe
 ```{r}
 joined_claims_df <- left_join(medicare_claims, providers, by="provider_ID")
 ```
@@ -93,14 +93,14 @@ joined_claims_df %>%
 Lastly, we will get the cost of buprenorphine per claim.
 
 
-* Using mutate(), add a new column dividing the values of total\_drug\_cost by total\_claim\_count. Call this column cost\_per\_claim
+* Using mutate(), add a new column dividing the values of total_drug_cost by total_claim_count. Call this column cost_per_claim
 
 ```{r}
 joined_claims_df %>%
   mutate(cos_per_claim = total_drug_cost/total_claim_count)
 ```
 
-* Using group\_by() and summarize(), find the mean the cost\_per\_claim column per each state.
+* Using group_by() and summarize(), find the mean the cost_per_claim column per each state.
 
 ```{r}
 joined_claims_df %>%
@@ -119,7 +119,7 @@ joined_claims_df %>%
 ```
 
 * Lastly, use the output you just generated to print find out which state has the highest
-  average cost\_per\_claim for buprenorphine
+  average cost_per_claim for buprenorphine
 
 ```{r}
 joined_claims_df %>%

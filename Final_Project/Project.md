@@ -12,7 +12,7 @@ We seek to understand patterns of buprenorphine usage nationally. Using the [201
 2. Identify the columns of this data frame using `glimpse()`
 3. Use `count()` on the column that identifies the state
 	* the `count()` function counts the number of appearances of each element in a column
-4. Filter the dataframe and find all the `BUPRENORPHINE` claims (hint: This is in the drug\_name column).
+4. Filter the dataframe and find all the `BUPRENORPHINE` claims (hint: This is in the drug_name column).
 5. Which State has the highest number of `BUPRENORPHINE` claims?
 	* you can use `count()` to generate numbers per state and `arrange()` to sort your column
 6. We just found out that sometimes the providers use the terms "BUPRENORPHINE HCL" or "BUPRENORPHINE-NALOXONE". Revise your filter to include those as well.
