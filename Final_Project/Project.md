@@ -31,5 +31,3 @@ Lastly, we will get the cost of buprenorphine per claim.
 * Using `group_by()` and `summarize()`, find the mean the `cost_per_claim` column per each state.
 * Sort this using `arrange()`
 * Lastly, find out which state has the highest average `cost_per_claim` for buprenorphine
-
-## Solutions can be found [here](./Solutions.Rmd)
