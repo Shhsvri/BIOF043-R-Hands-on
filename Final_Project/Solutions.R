@@ -59,8 +59,38 @@ joined_claims_df <- left_join(medicare_claims, providers, by = "provider_ID")
 
 # Which specialty prescribe buprenorphine the most?
 
-joined_claims_df %>% count(specialty_description) %>% arrange(desc(n))
+joined_claims_df %>%
+   count(specialty_description) %>%
+   arrange(desc(n))
+
+# Using mutate(), add a new column dividing the values of total_drug_cost by total_claim_count. Call this column cost_per_claim
+
+joined_claims_df %>%
+  mutate(cos_per_claim = total_drug_cost/total_claim_count)
 
 
-# 
+# Using group_by() and summarize(), find the mean the cost_per_claim column per each state.
 
+joined_claims_df %>%
+  mutate(cost_per_claim = total_drug_cost/total_claim_count) %>%
+  group_by(provider_state) %>%
+  summarize(mean(cost_per_claim))
+
+
+# Sort this output using arrange()
+
+joined_claims_df %>%
+  mutate(cost_per_claim = total_drug_cost/total_claim_count) %>%
+  group_by(provider_state) %>%
+  summarize(mean_per_state = mean(cost_per_claim)) %>%
+  arrange(mean_per_state)
+
+
+# use the output you just generated to print find out which state has the highest average cost_per_claim for buprenorphine
+
+joined_claims_df %>%
+  mutate(cost_per_claim = total_drug_cost/total_claim_count) %>%
+  group_by(provider_state) %>%
+  summarize(mean_per_state = mean(cost_per_claim)) %>%
+  arrange(mean_per_state) %>%
+  tail(1)
