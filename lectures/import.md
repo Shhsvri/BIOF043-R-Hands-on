@@ -29,21 +29,23 @@ ease. For the rest of this chapter we'll focus on `read_csv()`. Not only are csv
 the most common forms of data storage, but once you understand `read_csv()`, you can easily
 apply your knowledge to all the other functions in readr.
 
-The first argument to `read_csv()` is the most important: it's the path to the file to read.
+The first argument to `read_tsv()` is the most important: it's the path to the file to read.
 
 ```{r, message = TRUE}
-raw_counts <- read_csv("./datasets/RNAseq_raw_counts.csv")
+setwd("~/Day4/datasets")
+raw_counts <- read_tsv("counts.tsv")
+View(raw_counts)
 ```
 
-`read_csv()` uses the first line of the data for the column names, which is a very common
-convention. There are two cases where you might want to tweak this behaviour:
+`read_tsv()` uses the first line of the text file for the column names, which is a very common convention.
 
-We also have a tsv file in our Day4 data folder.
+We also have a csv file in our Day4 data folder.
 
 What happens when you try the following?
 
 ```{r}
-read_tsv("./datasets/RNAseq_raw_counts.csv")
+read_tsv("metadata.csv")
+read_csv("metadata.csv")
 ```
 
 - Let's use `glimpse()` to get an overview of what is in this table
@@ -52,16 +54,16 @@ read_tsv("./datasets/RNAseq_raw_counts.csv")
 glimpse(raw_counts)
 ```
 
-- Next, we would like to select only three of the columns in our raw\_counts dataframe: EntrezID, Treated\_1, Control\_1 and store the result in a new variable called: raw\_counts\_subset1
+- Next, we would like to select only three of the columns in our raw\_counts dataframe: geneID, read_count_AS1, and read_count_NC1 store the result in a new variable called: raw\_counts\_subset1
 
 ```{r}
 raw_counts_subset1 <- raw_counts %>%
-  select(EntrezID, Treated_1, Control_1)
+   select(geneID, read_count_AS1, read_count_NC1)
 
 glimpse(raw_counts_subset1)
 
 ggplot(raw_counts_subset1) +
-   geom_histogram(aes(x = Treated_1), bins = 100) + 
+   geom_histogram(aes(x = read_count_AS1), bins = 100) + 
    xlim(-5, 500)  +
    xlab("Raw expression counts") +
    ylab("Number of genes")
@@ -71,10 +73,10 @@ ggplot(raw_counts_subset1) +
 
 ```{r}
 raw_counts_subset1_filtered <- raw_counts_subset1 %>%
-  filter(Treated_1 > 5)
+  filter(read_count_AS1 > 20)
 
 ggplot(raw_counts_subset1_filtered) +
-   geom_histogram(aes(x = Treated_1), stat = "bin", bins = 200) + 
+   geom_histogram(aes(x = read_count_AS1), stat = "bin", bins = 200) + 
    xlim(-5, 500)  +
    xlab("Raw expression counts") +
    ylab("Number of genes")
