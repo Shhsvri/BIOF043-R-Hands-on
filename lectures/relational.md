@@ -21,8 +21,8 @@ left\_join is one of my most commonly used functions when I work with medical da
 Let's first create a few data frames which we could then merge using commong key/values.
 
 ```{r setup, message = FALSE}
-df <- data.frame(x<-c(1,23,4,43,2,17),y<-c("a","b","b","b","a","d"))
-dj <- data.frame(y<-c("a","b","c"),z<-c("apple","pear","orange"))
+df <- data.frame(x=c(1,23,4,43,2,17),y=c("a","b","b","b","a","d"))
+dj <- data.frame(y=c("a","b","c"),z=c("apple","pear","orange"))
 ```
 
 Now, let's view the content of each:
@@ -35,7 +35,8 @@ View(dj)
 Now, we merge the two tables using the common `y` column.
 
 ```{r}
-left_join(df,dj)
+joined_table <- left_join(df,dj)
+View(joined_table)
 ```
 
 <img src="../img/left_join.png" width="600">

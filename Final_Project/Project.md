@@ -11,13 +11,13 @@ We seek to understand patterns of buprenorphine usage nationally. Using the [201
 1. Load the `~/Day4/datasets/medicare_claims.tsv` file in R
 2. Identify the columns of this data frame using `glimpse()`
 3. Use `count()` on the column that identifies the state
-       * the `count()` function counts the number of appearances of each element in a column
+   * the `count()` function counts the number of appearances of each element in a column
 4. Filter the dataframe and find all the `Buprenorphine` claims (hint: This is in the drug\_name column).
 5. Which State has the highest number of `Buprenorphine` claims?
-       * you can use `count()` to generate numbers per state and `arrange()` to sort your column
+   * you can use `count()` to generate numbers per state and `arrange()` to sort your column
 6. We just found out that sometimes the providers use the terms "Buprenorphine Hcl" or "Buprenorphine-Naloxone". Revise your filter to include those as well. Save this output into a variable and name it `buprenorphine_claims`
 7. Use `geom_bar()` to find the aggregate count of buprenorphine claims with the state names as your x axis.
-       * generate the count table first, then use geom_bar to plot the aggregate counts
+   * generate the count table first, then use geom_bar to plot the aggregate counts
 
 Next, we would like to find out which providers (by specialty) prescribe buprenorphine the most.
 A second relational table is given: `medicare_providers.tsv`
