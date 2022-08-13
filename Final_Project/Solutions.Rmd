@@ -77,7 +77,7 @@ A second relational table is given: medicare_providers.tsv
 8. Load the ~/Day4/datasets/medicare_providers.tsv file in R
 
 ```{r}
-providers <- read_tsv("~/Day4/datasets/medicare_providers.tsv")
+providers <- read_csv("~/Day4/datasets/medicare_providers.csv")
 ```
 
 
@@ -92,7 +92,7 @@ joined_claims_bup <- left_join(buprenorphine_claims, providers, by = "provider_I
 
 ```{r}
 joined_claims_bup %>%
-  count(provider_specialty) %>%
+  count(specialty_description) %>%
   arrange(desc(n))
 ```
 
