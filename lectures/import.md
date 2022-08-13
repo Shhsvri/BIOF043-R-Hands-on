@@ -33,7 +33,7 @@ The first argument to `read_tsv()` is the most important: it's the path to the f
 
 ```{r, message = TRUE}
 setwd("~/Day4/datasets")
-raw_counts <- read_tsv("counts.tsv")
+raw_counts <- read_tsv("RNAseq_raw_counts.tsv")
 View(raw_counts)
 ```
 
@@ -44,8 +44,10 @@ We also have a csv file in our Day4 data folder.
 What happens when you try the following?
 
 ```{r}
-read_tsv("metadata.csv")
+metadata <- read_tsv("metadata.csv")
+View(metadata)
 read_csv("metadata.csv")
+View(metadata)
 ```
 
 - Let's use `glimpse()` to get an overview of what is in this table
@@ -58,25 +60,25 @@ glimpse(raw_counts)
 
 ```{r}
 raw_counts_subset1 <- raw_counts %>%
-   select(geneID, read_count_AS1, read_count_NC1)
+   select(EntrezID, Treated_1, Control_1)
 
 glimpse(raw_counts_subset1)
 
 ggplot(raw_counts_subset1) +
-   geom_histogram(aes(x = read_count_AS1), bins = 100) + 
+   geom_histogram(aes(x = Treated_1), bins = 100) + 
    xlim(-5, 500)  +
    xlab("Raw expression counts") +
    ylab("Number of genes")
 ```
 
-- Lastly, let's
+- Lastly, let's filter out the genes with low RNAseq count values
 
 ```{r}
 raw_counts_subset1_filtered <- raw_counts_subset1 %>%
-  filter(read_count_AS1 > 20)
+  filter(Treated_1 > 20)
 
 ggplot(raw_counts_subset1_filtered) +
-   geom_histogram(aes(x = read_count_AS1), stat = "bin", bins = 200) + 
+   geom_histogram(aes(x = Treated_1), stat = "bin", bins = 200) + 
    xlim(-5, 500)  +
    xlab("Raw expression counts") +
    ylab("Number of genes")

@@ -31,30 +31,30 @@ medicare_claims %>%
   count(provider_state)
 ```
 
-4. Filter the dataframe and find all the Buprenorphine claims (hint: This is in the drug_name column).
+4. Filter the dataframe and find all the BUPRENORPHINE claims (hint: This is in the drug_name column).
 
 ```{r}
 medicare_claims %>%
-  filter(drug_name == "Buprenorphine")
+  filter(drug_name == "BUPRENORPHINE")
 ```
 
   
-5. Which State has the highest number of Buprenorphine claims?
+5. Which State has the highest number of BUPRENORPHINE claims?
   * you can use arrange() to sort your column
 
 ```{r}
 medicare_claims %>%
-  filter(drug_name == "Buprenorphine") %>%
+  filter(drug_name == "BUPRENORPHINE") %>%
   count(provider_state) %>%
   arrange(desc(n))
 ```
 
 
-6. We just found out that sometimes the providers use the terms "Buprenorphine Hcl" or "Buprenorphine-Naloxone". Revise your filter to include those as well.
+6. We just found out that sometimes the providers use the terms "BUPRENORPHINE HCL" or "BUPRENORPHINE-NALOXONE". Revise your filter to include those as well.
 
 ```{r}
 buprenorphine_claims <- medicare_claims %>%
-  filter(drug_name == "Buprenorphine" | drug_name == "Buprenorphine Hcl" | drug_name == "Buprenorphine-Naloxone")
+  filter(drug_name == "BUPRENORPHINE" | drug_name == "BUPRENORPHINE HCL" | drug_name == "BUPRENORPHINE-NALOXONE")
 ```
 
 

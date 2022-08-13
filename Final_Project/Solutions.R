@@ -27,24 +27,24 @@ medicare_claims %>%
 # (hint: This is in the drug_name column).
 
 medicare_claims %>%
-  filter(drug_name == "Buprenorphine")
+  filter(drug_name == "BUPRENORPHINE")
 
 
 # Which State has the highest number of Buprenorphine claims?
 
 medicare_claims %>%
-  filter(drug_name == "Buprenorphine") %>%
+  filter(drug_name == "BUPRENORPHINE") %>%
   count(provider_state) %>%
   arrange(desc(n))
 
 
-# * We just found out that sometimes the providers use the terms "Buprenorphine Hcl"
-# or "Buprenorphine-Naloxone". Revise your filter to include those as well.
+# * We just found out that sometimes the providers use the terms "BUPRENORPHINE HCL"
+# or "BUPRENORPHINE-NALOXONE". Revise your filter to include those as well.
 # Store the output into buprenorphine_claims
 
 
 buprenorphine_claims <- medicare_claims %>%
-  filter(drug_name == "Buprenorphine" | drug_name == "Buprenorphine Hcl" | drug_name == "Buprenorphine-Naloxone")
+  filter(drug_name == "BUPRENORPHINE" | drug_name == "BUPRENORPHINE HCL" | drug_name == "BUPRENORPHINE-NALOXONE")
 
 
 # Use count to generate the number of buprenorphine claims by state
@@ -58,9 +58,9 @@ ggplot() +
            stat = "identity")
 
 
-# Load the ~/Day4/datasets/medicare_providers.tsv file in R
+# Load the ~/Day4/datasets/medicare_providers.csv file in R
 
-providers <- read_tsv("~/Day4/datasets/medicare_providers.tsv")
+providers <- read_csv("~/Day4/datasets/medicare_providers.csv")
 
 
 # Use left_join() to merge the providers by name specialty with the claims dataframe
@@ -71,7 +71,7 @@ joined_claims_bup <- left_join(buprenorphine_claims, providers, by = "provider_I
 # What specialty prescribe buprenorphine the most?
 
 joined_claims_bup %>%
-  count(provider_specialty) %>%
+  count(specialty_description) %>%
   arrange(desc(n))
 
 
