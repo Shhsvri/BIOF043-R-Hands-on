@@ -18,7 +18,6 @@ Before we start, we need to cover the following concepts:
 
 
 # [Final Project](Final_Project/Project.md)
-## [Solutions](Final_Project/Solutions.Rmd)
 
 Extra resources:
 

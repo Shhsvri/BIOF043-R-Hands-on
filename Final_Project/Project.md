@@ -8,7 +8,7 @@ Buprenorphine is a prescription drug used to treat opioid dependence. It is used
 
 We seek to understand patterns of buprenorphine usage nationally. Using the [2017 Medicare Part D Prescriber file](https://data.cms.gov/provider-summary-by-type-of-service/medicare-part-d-prescribers/medicare-part-d-prescribers-by-provider-and-drug/data), aggregate buprenorphine claims by the state of the provider and generate a reports using the following steps:
 
-1. Load the `~/Day4/datasets/medicare_claims.tsv` file in R
+1. Load the `~/Day4/datasets/medicare_subset_claims.tsv` file in R
 2. Identify the columns of this data frame using `glimpse()`
 3. Use `count()` on the column that identifies the state
    * the `count()` function counts the number of appearances of each element in a column
@@ -20,7 +20,7 @@ We seek to understand patterns of buprenorphine usage nationally. Using the [201
    * generate the count table first, then use geom_bar to plot the aggregate counts
 
 Next, we would like to find out which providers (by specialty) prescribe buprenorphine the most.
-A second relational table is given: `medicare_providers.tsv`
+A second relational table is given: `medicare_providers.csv`
 
 8. Load the `~/Day4/datasets/medicare_providers.tsv` file in R
 9. Use `left_join()` to merge the providers by name specialty with the claims dataframe

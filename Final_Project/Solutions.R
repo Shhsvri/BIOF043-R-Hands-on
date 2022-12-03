@@ -1,6 +1,6 @@
 # BIOF043 - Final Project
 # Shahin Shahsavari
-# 04/15/2022
+# 11/03/2022
 
 # Load the required libraries
 
@@ -9,7 +9,7 @@ library(tidyverse)
 
 # Load the `~/Day4/datasets/medicare_subset_claims.tsv` file in R
 
-medicare_claims <- read_tsv("~/Day4/datasets/medicare_claims.tsv")
+medicare_claims <- read_tsv("~/Day4/datasets/medicare_subset_claims.tsv")
 
 
 # Identify the columns of this data frame using glimpse()
