@@ -32,7 +32,7 @@ apply your knowledge to all the other functions in readr.
 The first argument to `read_tsv()` is the most important: it's the path to the file to read.
 
 ```{r, message = TRUE}
-setwd("~/Day4/datasets")
+setwd("~/day4/data/raw")
 raw_counts <- read_tsv("RNAseq_raw_counts.tsv")
 View(raw_counts)
 ```
