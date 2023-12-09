@@ -9,7 +9,7 @@ library(tidyverse)
 
 # Load the `~/Day4/datasets/medicare_subset_claims.tsv` file in R
 
-medicare_claims <- read_tsv("~/Day4/datasets/medicare_subset_claims.tsv")
+medicare_claims <- read_tsv("~/day4/data/raw/medicare_subset_claims.tsv")
 
 
 # Identify the columns of this data frame using glimpse()
@@ -60,7 +60,7 @@ ggplot() +
 
 # Load the ~/Day4/datasets/medicare_providers.csv file in R
 
-providers <- read_csv("~/Day4/datasets/medicare_providers.csv")
+providers <- read_csv("~/day4/data/raw/medicare_providers.csv")
 
 
 # Use left_join() to merge the providers by name specialty with the claims dataframe
